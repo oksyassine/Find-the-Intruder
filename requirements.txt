@@ -1,2 +1,3 @@
-botbuilder-integration-aiohttp>=4.7.0
-gensim>=3.8.1
+version https://git-lfs.github.com/spec/v1
+oid sha256:dec75be365d7dcea962b4ad0629185c99e5d69e4b94f157daa25fb5f9caa2cef
+size 54
