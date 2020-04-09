@@ -18,6 +18,7 @@ from botbuilder.schema import (
     AttachmentData,
     Activity,
     ActionTypes,
+    SuggestedActions,
 )
 from data_models import ConversationFlow, Question, UserProfile
 import random
@@ -26,7 +27,7 @@ from gensim.models import KeyedVectors
 model = KeyedVectors.load_word2vec_format('embedneg10')
 vocab=list(model.vocab.keys())
 intrus=""
-
+liste=[]
 class ValidationResult:
     def __init__(
         self, is_valid: bool = False, value: object = None, message: str = None
@@ -56,8 +57,8 @@ class IntruderBot(ActivityHandler):
         # Get the state properties from the turn context.
         profile = await self.profile_accessor.get(turn_context, UserProfile)
         flow = await self.flow_accessor.get(turn_context, ConversationFlow)
-
-        if turn_context.activity.text == "start":
+        text=turn_context.activity.text.lower()
+        if text == "get started":
             return await turn_context.send_activities([
                 Activity(
                     type=ActivityTypes.typing
@@ -71,7 +72,7 @@ class IntruderBot(ActivityHandler):
                     text="Welcome ! Thank you for subscribing.\r\nThis bot will present you a list of words and you should find the intruder.\r\nIf you ever want to test your lexical skills, just type a significant word and Let's Start !"
                     )
                 ])
-        elif turn_context.activity.text == "help":
+        elif text == "help":
             return await turn_context.send_activity(
                 MessageFactory.text("Intruder Bot\r\nUsage: type anything to start\r\nThank you!"
                 )
@@ -107,13 +108,14 @@ class IntruderBot(ActivityHandler):
                     MessageFactory.text(f"You choose: {profile.word}")
                 )
                 global intrus
+                global liste
                 most=model.most_similar(profile.word)
                 liste=[]
                 for i in range(5):
                     liste.append(most[:5][i][0])
                 sim=1
                 while (sim>0.5 or sim<0.3):
-                    intrus=vocab[random.randint(1,111000)]
+                    intrus=vocab[random.randint(1,len(vocab))]
                     sim=model.similarity(profile.word,intrus)
                 liste.insert(random.randrange(len(liste)),intrus)
 
@@ -164,8 +166,22 @@ class IntruderBot(ActivityHandler):
                             ),
                         ],
                     )
+
                     reply = MessageFactory.attachment(CardFactory.hero_card(card))
                     await turn_context.send_activity(reply)
+                    suggested = MessageFactory.text("Chase the Intruder!")
+                    suggested.suggested_actions = SuggestedActions(
+                        actions=[
+                            CardAction(title=liste[0], type=ActionTypes.im_back, value=liste[0]),
+                            CardAction(title=liste[1], type=ActionTypes.im_back, value=liste[1]),
+                            CardAction(title=liste[2], type=ActionTypes.im_back, value=liste[2]),
+                            CardAction(title=liste[3], type=ActionTypes.im_back, value=liste[3]),
+                            CardAction(title=liste[4], type=ActionTypes.im_back, value=liste[4]),
+                            CardAction(title=liste[5], type=ActionTypes.im_back, value=liste[5]),
+                        ]
+                    )
+
+                    await turn_context.send_activity(suggested)
                 else:
                     profile.response = validate_result.value
                     profile.score += 1
@@ -208,6 +224,6 @@ class IntruderBot(ActivityHandler):
             tst=True
         elif not tst:
             return ValidationResult(
-                is_valid=False, message="Your response is incorrect.\r\nTry again, or click on cancel if you want to exit the test."
+                is_valid=False, message="Your response is incorrect.\r\nTry again, or click on exit if you want to abort the test."
             )
         return ValidationResult(is_valid=True, value=user_input)
