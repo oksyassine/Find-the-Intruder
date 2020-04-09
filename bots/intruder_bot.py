@@ -24,7 +24,7 @@ from data_models import ConversationFlow, Question, UserProfile
 import random
 from gensim.models import KeyedVectors
 
-model = KeyedVectors.load_word2vec_format('embedneg10')
+model = KeyedVectors.load_word2vec_format('https://github.com/yassine20x/Find-the-Intruder/blob/master/embedneg10?raw=true')
 vocab=list(model.vocab.keys())
 intrus=""
 liste=[]
