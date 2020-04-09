@@ -19,7 +19,16 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: '3.7'
-
+    - name: 'Run pip'
+      shell: bash
+      run: |
+        # If your web app project is not located in your repository's root
+        # Please change your directory for pip in pushd
+        pushd .
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt --target=".python_packages/lib/python3.6/site-packages"
+        popd
+        
     - name: Build using AppService-Build
       uses: azure/appservice-build@v1
       with:
