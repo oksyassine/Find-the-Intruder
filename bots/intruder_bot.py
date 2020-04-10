@@ -23,12 +23,6 @@ from botbuilder.schema import (
 from data_models import ConversationFlow, Question, UserProfile
 import random
 from gensim.models import KeyedVectors
-import urllib.request
-try:
-    with open('embed.txt') as f:
-        print("True")
-except IOError:
-    urllib.request.urlretrieve("https://cdn-33.anonfile.com/d1S1b5o9od/a503150b-1586511276/embed10.txt", "embed.txt")
 
 model = KeyedVectors.load_word2vec_format('embed.txt')
 vocab=list(model.vocab.keys())
