@@ -23,8 +23,14 @@ from botbuilder.schema import (
 from data_models import ConversationFlow, Question, UserProfile
 import random
 from gensim.models import KeyedVectors
+import urllib.request
+try:
+    with open('embed') as f:
+        print("True")
+except IOError:
+    urllib.request.urlretrieve("https://github.com/yassine20x/Find-the-Intruder/blob/master/embedneg10?raw=true", "embed")
 
-model = KeyedVectors.load_word2vec_format('https://github.com/yassine20x/Find-the-Intruder/blob/master/embedneg10?raw=true')
+model = KeyedVectors.load_word2vec_format('embed')
 vocab=list(model.vocab.keys())
 intrus=""
 liste=[]
