@@ -40,7 +40,7 @@ async def on_error(context: TurnContext, error: Exception):
     # Send a message to the user
     await context.send_activity("The bot encountered an error or bug.")
     await context.send_activity(
-        "To continue to run this bot, please fix the bot source code."
+        "To continue to run this bot, please try again."
     )
     # Send a trace activity if we're talking to the Bot Framework Emulator
     if context.activity.channel_id == "emulator":

@@ -1,2 +1,5 @@
 botbuilder-integration-aiohttp>=4.7.0
-gensim>=3.8.1
+PyDictionary==1.5.2
+numpy==1.18.2
+scipy==1.4.1
+urllib3==1.25.8
