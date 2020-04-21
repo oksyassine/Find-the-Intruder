@@ -26,6 +26,7 @@ import random,os,json
 from scipy.spatial.distance import cosine
 from datetime import datetime
 from PyDictionary import PyDictionary
+dic=PyDictionary()
 
 with open('embed30.txt') as f:
     model = dict()
@@ -39,7 +40,7 @@ vocab=[w for w in model]
 
 def distance(w1, w2):
     return cosine(model[w1],model[w2])
-    
+
 def closest_words(word):
     distances = [
             (w, cosine(model[word], model[w]))
