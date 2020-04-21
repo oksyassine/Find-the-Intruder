@@ -187,8 +187,12 @@ class IntruderBot(ActivityHandler):
                 while (sim<0.6 or sim>1):
                     intrus=vocab[random.randint(1,len(vocab))]
                     meaning=dic.meaning(intrus)
-                    if not meaning or intrus in liste:
+                    if intrus in liste:
+                        #not meaning or
                         #wordnik api
+                        # test = f"curl -X GET --header 'Accept: application/json' 'https://api.wordnik.com/v4/word.json/w/definitions?api_key=cs97erkk4yazcozsud9prc9b19yrr89179kg9sydc3zavw8kt'"
+                        # result=os.popen(getwordofday).read()
+                        # res=json.loads(result)
                         continue
                     sim=distance(profile.word,intrus)
                 liste.insert(random.randrange(len(liste)),intrus)
