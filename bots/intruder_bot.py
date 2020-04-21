@@ -134,6 +134,9 @@ class IntruderBot(ActivityHandler):
             getwordofday = f"curl -X GET --header 'Accept: application/json' 'https://api.wordnik.com/v4/words.json/wordOfTheDay?date={today}&api_key=cs97erkk4yazcozsud9prc9b19yrr89179kg9sydc3zavw8kt'"
             result=os.popen(getwordofday).read()
             res=json.loads(result)
+            await turn_context.send_activity(
+                MessageFactory.text(f"The word of today is : **{res['word']}**")
+                )
             for it in res['definitions']:
                 await turn_context.send_activity(
                     MessageFactory.text(f"**{it['partOfSpeech']}** : \n\n* "+it['text'])
