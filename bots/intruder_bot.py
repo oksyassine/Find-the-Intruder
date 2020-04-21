@@ -1,6 +1,5 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-
 from botbuilder.core import (
     ActivityHandler,
     ConversationState,
@@ -21,17 +20,12 @@ from botbuilder.schema import (
     SuggestedActions,
 )
 from data_models import ConversationFlow, Question, UserProfile
+import numpy as np
+import math
 import random,os,json
+from scipy.spatial.distance import cosine
 from datetime import datetime
 from PyDictionary import PyDictionary
-
-dic=PyDictionary()
-
-from urllib.error import HTTPError
-
-import numpy as np
-from scipy.spatial.distance import cosine
-import math
 
 with open('embed30.txt') as f:
     model = dict()
@@ -45,7 +39,7 @@ vocab=[w for w in model]
 
 def distance(w1, w2):
     return cosine(model[w1],model[w2])
-
+    
 def closest_words(word):
     distances = [
             (w, cosine(model[word], model[w]))
@@ -75,7 +69,6 @@ class IntruderBot(ActivityHandler):
             raise TypeError(
                 "[CustomPromptBot]: Missing parameter. user_state is required but None was given"
             )
-
         self.conversation_state = conversation_state
         self.user_state = user_state
 
@@ -94,7 +87,7 @@ class IntruderBot(ActivityHandler):
                     ),
                 Activity(
                     type="delay",
-                    value=2000
+                    value=1000
                     ),
                 Activity(
                     type=ActivityTypes.message,
@@ -259,7 +252,6 @@ class IntruderBot(ActivityHandler):
                             CardAction(title=liste[5], type=ActionTypes.im_back, value=liste[5]),
                         ]
                     )
-
                     await turn_context.send_activity(suggested)
                 else:
                     profile.response = validate_result.value
