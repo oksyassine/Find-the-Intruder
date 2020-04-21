@@ -190,7 +190,7 @@ class IntruderBot(ActivityHandler):
                 global liste
                 liste=closest_words(profile.word)
                 sim=0
-                while (sim<0.7 or sim>1):
+                while (sim<0.6 or sim>1):
                     intrus=vocab[random.randint(1,len(vocab))]
                     meaning=dic.meaning(intrus)
                     if not meaning or intrus in liste:
