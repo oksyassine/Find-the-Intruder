@@ -178,25 +178,27 @@ class IntruderBot(ActivityHandler):
                         ),
                     Activity(
                         type="delay",
-                        value=3000
+                        value=2000
                         )])
                 global intrus
                 global liste
                 liste=closest_words(profile.word)
                 sim=0
-                while (sim<0.6 or sim>1):
-                    intrus=vocab[random.randint(1,len(vocab))]
+                while sim<0.5:
+                    intrus=vocab[random.randint(1,len(vocab)-1)]
                     meaning=dic.meaning(intrus)
                     if intrus in liste:
-                        #not meaning or
+                        continue
+                    if not meaning:
                         #wordnik api
-                        # test = f"curl -X GET --header 'Accept: application/json' 'https://api.wordnik.com/v4/word.json/w/definitions?api_key=cs97erkk4yazcozsud9prc9b19yrr89179kg9sydc3zavw8kt'"
-                        # result=os.popen(getwordofday).read()
+                        # test = f"curl -X GET --header 'Accept: application/json' 'https://api.wordnik.com/v4/word.json/{intrus}/definitions?api_key=cs97erkk4yazcozsud9prc9b19yrr89179kg9sydc3zavw8kt'"
+                        # result=os.popen(test).read()
                         # res=json.loads(result)
+                        # if list(res)[0] == 'statusCode':
+                        #     continue
                         continue
                     sim=distance(profile.word,intrus)
                 liste.insert(random.randrange(len(liste)),intrus)
-
                 card = HeroCard(
                     text="Here is the list of the words.\n\nPlease choose the intruder one!",
                     buttons=[
