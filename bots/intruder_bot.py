@@ -20,34 +20,37 @@ from botbuilder.schema import (
     SuggestedActions,
 )
 from data_models import ConversationFlow, Question, UserProfile
-import numpy as np
-import math
+# import numpy as np
+# import math
+# from scipy.spatial.distance import cosine
 import random,os,json
-from scipy.spatial.distance import cosine
 from datetime import datetime
 from PyDictionary import PyDictionary
 dic=PyDictionary()
+# with open('embed30.txt') as f:
+#     model = dict()
+#     for line in f.readlines()[1:]:
+#         row = line.split()
+#         word = row[0]
+#         vector = np.array([float(x) for x in row[1:]])
+#         model[word] = vector
+#
+# vocab=[w for w in model]
+#
+# def distance(w1, w2):
+#     return cosine(model[w1],model[w2])
+#
+# def closest_words(word):
+#     distances = [
+#             (w, cosine(model[word], model[w]))
+#             for w in model
+#     ]
+#     closest = sorted(distances, key=lambda item: item[1])[1:6]
+#     return [w for w,_ in closest]
+from gensim.models import KeyedVectors
 
-with open('embed30.txt') as f:
-    model = dict()
-    for line in f.readlines()[1:]:
-        row = line.split()
-        word = row[0]
-        vector = np.array([float(x) for x in row[1:]])
-        model[word] = vector
-
-vocab=[w for w in model]
-
-def distance(w1, w2):
-    return cosine(model[w1],model[w2])
-
-def closest_words(word):
-    distances = [
-            (w, cosine(model[word], model[w]))
-            for w in model
-    ]
-    closest = sorted(distances, key=lambda item: item[1])[1:6]
-    return [w for w,_ in closest]
+model = KeyedVectors.load_word2vec_format('embed30.txt')
+vocab=list(model.vocab.keys())
 
 intrus=""
 liste=[]
@@ -182,22 +185,22 @@ class IntruderBot(ActivityHandler):
                         )])
                 global intrus
                 global liste
-                liste=closest_words(profile.word)
-                sim=0
-                while sim<0.5:
+                #liste=closest_words(profile.word)
+                most=model.most_similar(profile.word)
+                liste=[]
+                for i in range(5):
+                    liste.append(most[:5][i][0])
+                sim=1
+                while sim>0.5:
                     intrus=vocab[random.randint(1,len(vocab)-1)]
                     meaning=dic.meaning(intrus)
                     if intrus in liste:
                         continue
                     if not meaning:
                         #wordnik api
-                        # test = f"curl -X GET --header 'Accept: application/json' 'https://api.wordnik.com/v4/word.json/{intrus}/definitions?api_key=cs97erkk4yazcozsud9prc9b19yrr89179kg9sydc3zavw8kt'"
-                        # result=os.popen(test).read()
-                        # res=json.loads(result)
-                        # if list(res)[0] == 'statusCode':
-                        #     continue
                         continue
-                    sim=distance(profile.word,intrus)
+                    #sim=distance(profile.word,intrus)
+                    sim=model.similarity(profile.word,intrus)
                 liste.insert(random.randrange(len(liste)),intrus)
                 card = HeroCard(
                     text="Here is the list of the words.\n\nPlease choose the intruder one!",
