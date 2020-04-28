@@ -87,6 +87,24 @@ class SkipGramReader(DatasetReader):
 
                         token_out = LabelField(tokens[j], label_namespace='token_out') # Labelfield
                         yield Instance({'token_in': token_in, 'token_out': token_out}) # Instance
+reader = SkipGramReader()
+text8 = reader.read('data/text8')
+#Once we've read the dataset, we use it to create our vocabulary
+vocab = Vocabulary.from_instances(text8, min_count={'token_in': 2, 'token_out': 2})
+del(text8)
+#reading the dataset with Vocabulary to sub-sample the frequent words 
+reader = SkipGramReader(vocab=vocab)
+text8 = reader.read('data/text8')
+
+BATCH_SIZE = 256 #batch_size specifies the size of the batch (the number of instances in a batch)
+iterator = BasicIterator(batch_size=BATCH_SIZE)
+iterator.index_with(vocab)
+EMBEDDING_DIM = 300
+embedding_in = Embedding(num_embeddings=vocab.get_vocab_size('token_in'),
+                         embedding_dim=EMBEDDING_DIM)
+if CUDA_DEVICE > -1:
+  embedding_in = embedding_in.to(CUDA_DEVICE) # we are able now to use GPU 0 
+
 
 #1 we implement the Skip-gram model
 class SkipGramModel(Model):
@@ -110,7 +128,21 @@ class SkipGramModel(Model):
 #7 This combines softmax and loss ompute the loss in a single function .c
         loss = functional.cross_entropy(logits, token_out)
         return {'loss': loss}
-        
+model = SkipGramModel(vocab=vocab,
+                  embedding_in=embedding_in,
+                  cuda_device=CUDA_DEVICE)
+optimizer = optim.Adam(model.parameters())
+checkpoint = Checkpointer(serialization_dir="checkpoint/")
+trainer = Trainer(model=model,
+              optimizer=optimizer,
+              iterator=iterator,
+              train_dataset=text8,
+              patience=3,
+              num_epochs=30,
+              checkpointer=checkpoint,
+              cuda_device=CUDA_DEVICE)
+trainer.train()
+
 def get_related(token: str, embedding: Model, vocab: Vocabulary, num_related: int = 20):
     """Given a token, return a list of top 20 most similar words to the token."""
     token_id = vocab.get_token_index(token, 'token_in')
@@ -124,6 +156,10 @@ def get_related(token: str, embedding: Model, vocab: Vocabulary, num_related: in
         sims[token] = sim #save the value of cosine similarity
 
     return sims.most_common(num_related)
+
+print(get_related('december', embedding_in, vocab))
+print(get_related('december', embedding_in, vocab))
+print(get_related('december', embedding_in, vocab))
 
 def read_simlex999():
     simlex999 = []
@@ -165,6 +201,8 @@ def evaluate_embeddings(embedding, vocab: Vocabulary):
     #Calculates a Spearman rank-order correlation coefficient and the p-value to test for non-correlation.
     """scipy.stats.spearmanr(a, b=None, axis=0)[source]
 Calculates a Spearman rank-order correlation coefficient and the p-value to test for non-correlation."""
+rho = evaluate_embeddings(embedding_in, vocab)
+print('simlex999 speareman correlation: {}'.format(rho))
 
 def write_embeddings(embedding: Embedding, file_path, vocab: Vocabulary):
     with open(file_path, mode='w') as f:
@@ -175,49 +213,5 @@ def write_embeddings(embedding: Embedding, file_path, vocab: Vocabulary):
             values = ['{:.10f}'.format(val) for val in embedding.weight[index]]#write each value as a number with 10 decimals
             f.write(' '.join([token] + values))
             f.write('\n')
-
-def main():
-    reader = SkipGramReader()
-    text8 = reader.read('data/text8')
-    #Once we've read the dataset, we use it to create our vocabulary
-    vocab = Vocabulary.from_instances(text8, min_count={'token_in': 2, 'token_out': 2})
-
-    del(text8)
-    #reading the dataset with Vocabulary to sub-sample the frequent words 
-    reader = SkipGramReader(vocab=vocab)
-    text8 = reader.read('data/text8')
-    BATCH_SIZE = 256 #batch_size specifies the size of the batch (the number of instances in a batch)
-    iterator = BasicIterator(batch_size=BATCH_SIZE)
-    iterator.index_with(vocab)
-    
-    EMBEDDING_DIM = 300
-    embedding_in = Embedding(num_embeddings=vocab.get_vocab_size('token_in'),
-                             embedding_dim=EMBEDDING_DIM)
-    if CUDA_DEVICE > -1:
-      embedding_in = embedding_in.to(CUDA_DEVICE) # we are able now to use GPU 0 
-      
-    model = SkipGramModel(vocab=vocab,
-                      embedding_in=embedding_in,
-                      cuda_device=CUDA_DEVICE)
-    optimizer = optim.Adam(model.parameters())
-    checkpoint = Checkpointer(serialization_dir="checkpoint/")
-    trainer = Trainer(model=model,
-                  optimizer=optimizer,
-                  iterator=iterator,
-                  train_dataset=text8,
-                  patience=3,
-                  num_epochs=30,
-                  checkpointer=checkpoint,
-                  cuda_device=CUDA_DEVICE)
-    trainer.train()
-    print(get_related('december', embedding_in, vocab))
-    print(get_related('december', embedding_in, vocab))
-    print(get_related('december', embedding_in, vocab))
-    
-    rho = evaluate_embeddings(embedding_in, vocab)
-    print('simlex999 speareman correlation: {}'.format(rho))
-    
-    write_embeddings(embedding_in,'embed17.txt', vocab)
-    
-if __name__ == '__main__':
-    main()
+            
+write_embeddings(embedding_in,'embed17.txt', vocab)
