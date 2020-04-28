@@ -4,7 +4,7 @@ import torch
 import torch.optim as optim
 import numpy as np
 import math
-#import random
+import random
 from allennlp.data.instance import Instance
 from allennlp.data.fields import LabelField
 from allennlp.data.dataset_readers.dataset_reader import DatasetReader
@@ -200,7 +200,7 @@ def main():
                       embedding_in=embedding_in,
                       cuda_device=CUDA_DEVICE)
     optimizer = optim.Adam(model.parameters())
-    checkpoint = Checkpointer(serialization_dir="/content/drive/My Drive/_AI.NLP/check6-3/")
+    checkpoint = Checkpointer(serialization_dir="checkpoint/")
     trainer = Trainer(model=model,
                   optimizer=optimizer,
                   iterator=iterator,
@@ -217,4 +217,7 @@ def main():
     rho = evaluate_embeddings(embedding_in, vocab)
     print('simlex999 speareman correlation: {}'.format(rho))
     
-    write_embeddings(embedding_in, 'drive/My Drive/_AI.NLP/embed17.txt', vocab)
+    write_embeddings(embedding_in,'embed17.txt', vocab)
+    
+if __name__ == '__main__':
+    main()
