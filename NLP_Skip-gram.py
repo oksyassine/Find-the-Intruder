@@ -24,9 +24,9 @@ CUDA_DEVICE = 0
 
 @DatasetReader.register("skip_gram")
 class SkipGramReader(DatasetReader):
-    def __init__(self, window_size=2, lazy=False, vocab: Vocabulary=None):
+    def __init__(self, window_size=2, vocab: Vocabulary=None):
         #if we set "lazy" variable to True, DatasetReader will create and yield up instances as needed rather than all at once.
-        super().__init__(lazy=lazy)
+        super().__init__(lazy=False)
         #window_size is the maximum distance between the focus word and its contextual neighbors
         self.window_size = window_size
         self.reject_probs = None
