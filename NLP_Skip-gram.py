@@ -201,8 +201,47 @@ def evaluate_embeddings(embedding, vocab: Vocabulary):
     #Calculates a Spearman rank-order correlation coefficient and the p-value to test for non-correlation.
     """scipy.stats.spearmanr(a, b=None, axis=0)[source]
 Calculates a Spearman rank-order correlation coefficient and the p-value to test for non-correlation."""
+    
 rho = evaluate_embeddings(embedding_in, vocab)
 print('simlex999 speareman correlation: {}'.format(rho))
+
+from sklearn.manifold import TSNE #import TSNE technic from manifold
+import matplotlib.pyplot as plt
+# Reading a mixture of text and numbers
+def read_model(file_path):
+    with open(file_path) as f:
+        i=0
+        for line in f.readlines()[6:]:
+            row = line.split()#for each line, split the line into :
+            word = row[0] # word in row[0]
+            vec = [float(x) for x in row[1:]]#and vector for the rest of the line in row[1:].
+            yield (word, vec) #return every iteration ( yield : generator )
+            i+=1#passing to the next ligne
+            if i == 1100:
+                break
+
+words = []
+vectors = []
+for word, vec in read_model('drive/My Drive/_AI.NLP/vectors/embedfull6-3.txt'):#pour tous les 1100 couples de (word,vec) retourné
+    words.append(word)#add each word to  words's array.
+    vectors.append(vec)#parallèlement, ajouter chaque vecteur dans la liste vectors
+
+modele = TSNE(n_components=2, init='pca', random_state=0) #Fixing Dimension of the embedded space et 2 ,PCA Initialization of embedding,the random number generator is the RandomState instance used by np.random.
+coordinates = modele.fit_transform(vectors)#  Performs the calculations and returns the 2 principal components(Fit to data, then transform it.)
+
+plt.figure(figsize=(50, 50))
+
+for word, xy in zip(words, coordinates): #parallele aggregation of elements from two iterables(words,coordinates)
+    plt.scatter(xy[0], xy[1])
+    plt.annotate(word, #add annotations to our plot
+                  xy=(xy[0], xy[1]),
+                  xytext=(2, 2),
+                  textcoords='offset points')
+    
+
+plt.xlim(-5, 5)
+plt.ylim(-5, 5)
+plt.show()
 
 def write_embeddings(embedding: Embedding, file_path, vocab: Vocabulary):
     with open(file_path, mode='w') as f:
