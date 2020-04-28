@@ -1,10 +1,10 @@
-from collections import Counter
+#----------------------------Libraries---------------------------------#
 
+from collections import Counter
 import torch
 import torch.optim as optim
 import numpy as np
 import math
-import random
 from allennlp.data.instance import Instance
 from allennlp.data.fields import LabelField
 from allennlp.data.dataset_readers.dataset_reader import DatasetReader
@@ -21,6 +21,7 @@ from torch.nn import CosineSimilarity
 from torch.nn import functional
 
 CUDA_DEVICE = 0
+#----------------------Defining the DatasetReader and Preparing the data----------------------------------#
 
 @DatasetReader.register("skip_gram")
 class SkipGramReader(DatasetReader):
@@ -105,6 +106,7 @@ embedding_in = Embedding(num_embeddings=vocab.get_vocab_size('token_in'),
 if CUDA_DEVICE > -1:
   embedding_in = embedding_in.to(CUDA_DEVICE) # we are able now to use GPU 0 
 
+#---------------------------Defining the skip-gram Model-----------------------------------#
 
 #1 we implement the Skip-gram model
 class SkipGramModel(Model):
@@ -131,8 +133,12 @@ class SkipGramModel(Model):
 model = SkipGramModel(vocab=vocab,
                   embedding_in=embedding_in,
                   cuda_device=CUDA_DEVICE)
+
 optimizer = optim.Adam(model.parameters())
 checkpoint = Checkpointer(serialization_dir="checkpoint/")
+
+#----------------------------training the model---------------------------------#
+
 trainer = Trainer(model=model,
               optimizer=optimizer,
               iterator=iterator,
@@ -142,6 +148,8 @@ trainer = Trainer(model=model,
               checkpointer=checkpoint,
               cuda_device=CUDA_DEVICE)
 trainer.train()
+
+#----------------------------Evaluating and Exploring the Model Results---------------------------------#
 
 def get_related(token: str, embedding: Model, vocab: Vocabulary, num_related: int = 20):
     """Given a token, return a list of top 20 most similar words to the token."""
@@ -205,6 +213,8 @@ Calculates a Spearman rank-order correlation coefficient and the p-value to test
 rho = evaluate_embeddings(embedding_in, vocab)
 print('simlex999 speareman correlation: {}'.format(rho))
 
+#----------------------------Visualize The word embeddings---------------------------------#
+
 from sklearn.manifold import TSNE #import TSNE technic from manifold
 import matplotlib.pyplot as plt
 # Reading a mixture of text and numbers
@@ -242,6 +252,8 @@ for word, xy in zip(words, coordinates): #parallele aggregation of elements from
 plt.xlim(-5, 5)
 plt.ylim(-5, 5)
 plt.show()
+
+#----------------------------Export the model---------------------------------#
 
 def write_embeddings(embedding: Embedding, file_path, vocab: Vocabulary):
     with open(file_path, mode='w') as f:
