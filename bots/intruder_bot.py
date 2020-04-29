@@ -23,10 +23,6 @@ from data_models import ConversationFlow, Question, UserProfile
 # import numpy as np
 # import math
 # from scipy.spatial.distance import cosine
-import random,os,json
-from datetime import datetime
-from PyDictionary import PyDictionary
-dic=PyDictionary()
 # with open('embed30.txt') as f:
 #     model = dict()
 #     for line in f.readlines()[1:]:
@@ -47,14 +43,22 @@ dic=PyDictionary()
 #     ]
 #     closest = sorted(distances, key=lambda item: item[1])[1:6]
 #     return [w for w,_ in closest]
+try:
+    with open('api_key') as f:
+        api_key=f.readline().strip()
+except FileNotFoundError as e:
+    print("File Not Found: api_key")
+import random,os,json
+from datetime import datetime
+from PyDictionary import PyDictionary
+dic=PyDictionary()
+#load our model
 from gensim.models import KeyedVectors
-
 model = KeyedVectors.load_word2vec_format('embed30.txt')
 vocab=list(model.vocab.keys())
 
 intrus=""
 liste=[]
-
 class ValidationResult:
     def __init__(
         self, is_valid: bool = False, value: object = None, message: str = None
@@ -128,7 +132,7 @@ class IntruderBot(ActivityHandler):
                 )
         elif text == "word of the day" or text == "/word_day":
             today=datetime.today().strftime('%Y-%m-%d')
-            getwordofday = f"curl -X GET --header 'Accept: application/json' 'https://api.wordnik.com/v4/words.json/wordOfTheDay?date={today}&api_key=cs97erkk4yazcozsud9prc9b19yrr89179kg9sydc3zavw8kt'"
+            getwordofday = f"curl -X GET --header 'Accept: application/json' 'https://api.wordnik.com/v4/words.json/wordOfTheDay?date={today}&api_key={api_key}'"
             result=os.popen(getwordofday).read()
             res=json.loads(result)
             await turn_context.send_activity(
@@ -158,12 +162,14 @@ class IntruderBot(ActivityHandler):
     ):
         user_input = turn_context.activity.text.strip().lower()
 
+        #begin a conversation and ask for a significant word
         if flow.last_question_asked == Question.NONE:
             await turn_context.send_activity(
                 MessageFactory.text("Let's get started. Please type a significant word !")
             )
             flow.last_question_asked = Question.WORD
 
+        #validate word and ask for the response
         elif flow.last_question_asked == Question.WORD:
             validate_result = self._validate_word(user_input)
             if not validate_result.is_valid:
@@ -193,9 +199,9 @@ class IntruderBot(ActivityHandler):
                 sim=1
                 while sim>0.5:
                     intrus=vocab[random.randint(1,len(vocab)-1)]
-                    meaning=dic.meaning(intrus)
                     if intrus in liste:
                         continue
+                    meaning=dic.meaning(intrus)
                     if not meaning:
                         #wordnik api
                         continue
@@ -277,21 +283,20 @@ class IntruderBot(ActivityHandler):
                     flow.last_question_asked = Question.NONE
 
     def _validate_word(self, user_input: str) -> ValidationResult:
-        word=user_input.lower()
-        tst=False
-        for w in vocab:
-            if word == w:
-                tst=True
-                meaning=dic.meaning(word)
-                if not meaning:
-                    tst=False
-                    #wordnik api
-        if " " in word:
+        if " " in user_input:
             return ValidationResult(
                 is_valid=False,
                 message="Please type just one word",
             )
-        elif not tst:
+        tst=False
+        for w in vocab:
+            if user_input == w:
+                tst=True
+                meaning=dic.meaning(user_input)
+                if not meaning:
+                    tst=False
+                    #wordnik api
+        if not tst:
             return ValidationResult(
                 is_valid=False,
                 message="Please type a significant word",
