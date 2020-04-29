@@ -9,12 +9,10 @@ from botbuilder.core import (
     MessageFactory,
 )
 from botbuilder.schema import (
-    ChannelAccount,
     HeroCard,
     CardAction,
     ActivityTypes,
     Attachment,
-    AttachmentData,
     Activity,
     ActionTypes,
     SuggestedActions,

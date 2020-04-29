@@ -3,12 +3,10 @@
 
 from enum import Enum
 
-
 class Question(Enum):
     WORD = 1
     RESPONSE = 2
     NONE = 3
-
 
 class ConversationFlow:
     def __init__(
