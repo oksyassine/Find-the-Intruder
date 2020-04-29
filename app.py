@@ -28,15 +28,11 @@ CONFIG = DefaultConfig()
 SETTINGS = BotFrameworkAdapterSettings(CONFIG.APP_ID, CONFIG.APP_PASSWORD)
 ADAPTER = BotFrameworkAdapter(SETTINGS)
 
-
 # Catch-all for errors.
 async def on_error(context: TurnContext, error: Exception):
-    # This check writes out errors to console log .vs. app insights.
-    # NOTE: In production environment, you should consider logging this to Azure
-    #       application insights.
+    # This check writes out errors to console log
     print(f"\n [on_turn_error] unhandled error: {error}", file=sys.stderr)
     traceback.print_exc()
-
     # Send a message to the user
     await context.send_activity("The bot encountered an error or bug.")
     await context.send_activity(
@@ -55,10 +51,8 @@ async def on_error(context: TurnContext, error: Exception):
         )
         # Send a trace activity, which will be displayed in Bot Framework Emulator
         await context.send_activity(trace_activity)
-
     # Clear out state
     await CONVERSATION_STATE.delete(context)
-
 
 # Set the error handler on the Adapter.
 # In this case, we want an unbound method, so MethodType is not needed.
@@ -71,7 +65,6 @@ CONVERSATION_STATE = ConversationState(MEMORY)
 
 # Create Bot
 BOT = IntruderBot(CONVERSATION_STATE, USER_STATE)
-
 
 # Listen for incoming requests on /api/messages.
 async def messages(req: Request) -> Response:
