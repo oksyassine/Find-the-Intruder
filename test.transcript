@@ -1,0 +1,1400 @@
+[
+  {
+    "type": "conversationUpdate",
+    "membersAdded": [
+      {
+        "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+        "name": "Bot"
+      },
+      {
+        "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+        "name": "User"
+      }
+    ],
+    "membersRemoved": [],
+    "channelId": "emulator",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "ed6dfd60-8a1b-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:18:34+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "timestamp": "2020-04-29T13:18:34.038Z",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "15881663284022gga44l1389",
+      "clientTimestamp": "2020-04-29T13:18:48.402Z"
+    },
+    "text": "/start",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:18:48.420Z",
+    "entities": [
+      {
+        "requiresBotState": true,
+        "supportsListening": true,
+        "supportsTts": true,
+        "type": "ClientCapabilities"
+      }
+    ],
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "f6008240-8a1b-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:18:48+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "typing",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "inputHint": "acceptingInput",
+    "replyToId": "f6008240-8a1b-11ea-90ee-5bf8a33fff60",
+    "id": "f6056440-8a1b-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:18:48+00:00",
+    "timestamp": "2020-04-29T13:18:48.452Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "Welcome ! Thank you for subscribing.\n\nThis bot will present you a list of words similar to the word that you will type, and you should find the intruder one.\n\nYou can use the built-in dictionary at anytime to search the meanings of a word.\n\nIf you want any help just type 'help me' .\n\nIf you ever want to test your lexical skills, just type a significant word and Let's Start !",
+    "inputHint": "acceptingInput",
+    "replyToId": "f6008240-8a1b-11ea-90ee-5bf8a33fff60",
+    "id": "f69f5a50-8a1b-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:18:49+00:00",
+    "timestamp": "2020-04-29T13:18:49.461Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166333445b5219w4s63o",
+      "clientTimestamp": "2020-04-29T13:18:53.445Z"
+    },
+    "text": "help me",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:18:53.448Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "f8ffb880-8a1b-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:18:53+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "Intruder Bot\n\nUsage: \n\n _Def word_ You can use the built-in dictionary at anytime to search the meanings of a word.\n\nType anything to start the test, then when the conversation starts, you will be asked to type a word, and we will send you 5 most similar words to that word and an intruder one that you have to detect in order to pass the test. \n\n Your score will be incremented on each correct response, and will be decremented on each incorrect response.\n\n Let's Play !",
+    "inputHint": "acceptingInput",
+    "replyToId": "f8ffb880-8a1b-11ea-90ee-5bf8a33fff60",
+    "id": "f9016630-8a1b-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:18:53+00:00",
+    "timestamp": "2020-04-29T13:18:53.459Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166346010q4bhtss9f4t",
+      "clientTimestamp": "2020-04-29T13:19:06.011Z"
+    },
+    "text": "word of the day",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:19:06.014Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "007d23e0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:19:06+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "The word of today is : **distelfink**",
+    "inputHint": "acceptingInput",
+    "replyToId": "007d23e0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "015cae70-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:19:07+00:00",
+    "timestamp": "2020-04-29T13:19:07.479Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "**noun** : \n\n* A stylized goldfinch in Pennsylvania Dutch folk art, representing happiness and good fortune.",
+    "inputHint": "acceptingInput",
+    "replyToId": "007d23e0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "015eaa40-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:19:07+00:00",
+    "timestamp": "2020-04-29T13:19:07.492Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "_Example1_ \n\n**Home Swell Home** : \n\n* They have groovy geometric folk symbols said to have magical properties: a heart for love, the distelfink a cute bird for good luck and happiness.",
+    "inputHint": "acceptingInput",
+    "replyToId": "007d23e0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "0160cd20-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:19:07+00:00",
+    "timestamp": "2020-04-29T13:19:07.506Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "**Note** : \n\n* The word 'distelfink' comes from a German name for the European goldfinch.",
+    "inputHint": "acceptingInput",
+    "replyToId": "007d23e0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "01627ad0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:19:07+00:00",
+    "timestamp": "2020-04-29T13:19:07.517Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166362634hvjao9m1l0t",
+      "clientTimestamp": "2020-04-29T13:19:22.634Z"
+    },
+    "text": "def user",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:19:22.639Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "0a65e9f0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:19:22+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "**Noun** : \n\n* a person who makes use of a thing; someone who uses or employs something \n\n* a person who uses something or someone selfishly or unethically \n\n* a person who takes drugs",
+    "inputHint": "acceptingInput",
+    "replyToId": "0a65e9f0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "0c4c0f10-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:19:25+00:00",
+    "timestamp": "2020-04-29T13:19:25.825Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166377907cji7z57izpq",
+      "clientTimestamp": "2020-04-29T13:19:37.907Z"
+    },
+    "text": "test",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:19:37.913Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "13808a90-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:19:37+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "Let's get started. Please type a significant word !",
+    "inputHint": "acceptingInput",
+    "replyToId": "13808a90-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "13828660-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:19:37+00:00",
+    "timestamp": "2020-04-29T13:19:37.925Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166400377fzjbxtcciw6",
+      "clientTimestamp": "2020-04-29T13:20:00.378Z"
+    },
+    "text": "user",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:20:00.381Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "20e4e2d0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:20:00+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "You choose: user \n\nPlease Wait.",
+    "inputHint": "acceptingInput",
+    "replyToId": "20e4e2d0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "217981b0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:20:01+00:00",
+    "timestamp": "2020-04-29T13:20:01.355Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "typing",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "inputHint": "acceptingInput",
+    "replyToId": "20e4e2d0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "217cdd10-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:20:01+00:00",
+    "timestamp": "2020-04-29T13:20:01.377Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "attachmentLayout": "list",
+    "inputHint": "acceptingInput",
+    "attachments": [
+      {
+        "contentType": "application/vnd.microsoft.card.hero",
+        "content": {
+          "text": "Here is the list of the words.\n\nPlease choose the intruder one!",
+          "buttons": [
+            {
+              "type": "imBack",
+              "title": "users",
+              "value": "users"
+            },
+            {
+              "type": "imBack",
+              "title": "sago",
+              "value": "sago"
+            },
+            {
+              "type": "imBack",
+              "title": "interface",
+              "value": "interface"
+            },
+            {
+              "type": "imBack",
+              "title": "server",
+              "value": "server"
+            },
+            {
+              "type": "imBack",
+              "title": "file",
+              "value": "file"
+            },
+            {
+              "type": "imBack",
+              "title": "software",
+              "value": "software"
+            }
+          ]
+        }
+      }
+    ],
+    "replyToId": "20e4e2d0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "24851400-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:20:06+00:00",
+    "timestamp": "2020-04-29T13:20:06.464Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166412850jjhtr26wej",
+      "clientTimestamp": "2020-04-29T13:20:12.850Z"
+    },
+    "text": "sago",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:20:12.863Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "28557cf0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:20:12+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "You have responded correctly.\n\nYour score is: 1\n\nThanks for completing the test.",
+    "inputHint": "acceptingInput",
+    "replyToId": "28557cf0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "28579fd0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:20:12+00:00",
+    "timestamp": "2020-04-29T13:20:12.877Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "Type anything to run the Intruder Bot again.",
+    "inputHint": "acceptingInput",
+    "replyToId": "28557cf0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "28592670-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:20:12+00:00",
+    "timestamp": "2020-04-29T13:20:12.887Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166439585ds2s7npai3",
+      "clientTimestamp": "2020-04-29T13:20:39.585Z"
+    },
+    "text": "hello",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:20:39.599Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "384513f0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:20:39+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "Let's get started. Please type a significant word !",
+    "inputHint": "acceptingInput",
+    "replyToId": "384513f0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "38475de0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:20:39+00:00",
+    "timestamp": "2020-04-29T13:20:39.614Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "15881664715481mn0a2gox8s",
+      "clientTimestamp": "2020-04-29T13:21:11.548Z"
+    },
+    "text": "online",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:21:11.558Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "4b51a260-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:21:11+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "You choose: online \n\nPlease Wait.",
+    "inputHint": "acceptingInput",
+    "replyToId": "4b51a260-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "4bcaca00-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:21:12+00:00",
+    "timestamp": "2020-04-29T13:21:12.352Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "typing",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "inputHint": "acceptingInput",
+    "replyToId": "4b51a260-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "4bccece0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:21:12+00:00",
+    "timestamp": "2020-04-29T13:21:12.366Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "attachmentLayout": "list",
+    "inputHint": "acceptingInput",
+    "attachments": [
+      {
+        "contentType": "application/vnd.microsoft.card.hero",
+        "content": {
+          "text": "Here is the list of the words.\n\nPlease choose the intruder one!",
+          "buttons": [
+            {
+              "type": "imBack",
+              "title": "internet",
+              "value": "internet"
+            },
+            {
+              "type": "imBack",
+              "title": "links",
+              "value": "links"
+            },
+            {
+              "type": "imBack",
+              "title": "dictionary",
+              "value": "dictionary"
+            },
+            {
+              "type": "imBack",
+              "title": "atticus",
+              "value": "atticus"
+            },
+            {
+              "type": "imBack",
+              "title": "org",
+              "value": "org"
+            },
+            {
+              "type": "imBack",
+              "title": "com",
+              "value": "com"
+            }
+          ]
+        }
+      }
+    ],
+    "replyToId": "4b51a260-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "4ea2f040-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:21:17+00:00",
+    "timestamp": "2020-04-29T13:21:17.124Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166484055sjkkdp53c7",
+      "clientTimestamp": "2020-04-29T13:21:24.055Z"
+    },
+    "text": "internet",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:21:24.070Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "52c6d060-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:21:24+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "attachmentLayout": "list",
+    "inputHint": "acceptingInput",
+    "attachments": [
+      {
+        "contentType": "application/vnd.microsoft.card.hero",
+        "content": {
+          "text": "Your response is incorrect.\n\nTry again, or click on exit if you want to abort the test.",
+          "buttons": [
+            {
+              "type": "imBack",
+              "title": "exit",
+              "value": "exit"
+            }
+          ]
+        }
+      }
+    ],
+    "replyToId": "52c6d060-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "52c9b690-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:21:24+00:00",
+    "timestamp": "2020-04-29T13:21:24.089Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "Your Score is: 0",
+    "inputHint": "acceptingInput",
+    "replyToId": "52c6d060-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "52cbd970-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:21:24+00:00",
+    "timestamp": "2020-04-29T13:21:24.103Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "Chase the Intruder!",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "imBack",
+          "title": "internet",
+          "value": "internet"
+        },
+        {
+          "type": "imBack",
+          "title": "links",
+          "value": "links"
+        },
+        {
+          "type": "imBack",
+          "title": "dictionary",
+          "value": "dictionary"
+        },
+        {
+          "type": "imBack",
+          "title": "atticus",
+          "value": "atticus"
+        },
+        {
+          "type": "imBack",
+          "title": "org",
+          "value": "org"
+        },
+        {
+          "type": "imBack",
+          "title": "com",
+          "value": "com"
+        }
+      ]
+    },
+    "replyToId": "52c6d060-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "52cdfc50-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:21:24+00:00",
+    "timestamp": "2020-04-29T13:21:24.117Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166490906w1j9vce6wm",
+      "clientTimestamp": "2020-04-29T13:21:30.906Z"
+    },
+    "text": "atticus",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:21:30.914Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "56db2020-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:21:30+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "You have responded correctly.\n\nYour score is: 1\n\nThanks for completing the test.",
+    "inputHint": "acceptingInput",
+    "replyToId": "56db2020-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "56de7b80-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:21:30+00:00",
+    "timestamp": "2020-04-29T13:21:30.936Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "Type anything to run the Intruder Bot again.",
+    "inputHint": "acceptingInput",
+    "replyToId": "56db2020-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "56e05040-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:21:30+00:00",
+    "timestamp": "2020-04-29T13:21:30.948Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166570979lbtyxokv5u",
+      "clientTimestamp": "2020-04-29T13:22:50.985Z"
+    },
+    "text": "sdf",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:22:51.012Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "86994350-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:22:51+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "Let's get started. Please type a significant word !",
+    "inputHint": "acceptingInput",
+    "replyToId": "86994350-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "869c0270-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:22:51+00:00",
+    "timestamp": "2020-04-29T13:22:51.031Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166576145juje6sajzng",
+      "clientTimestamp": "2020-04-29T13:22:56.145Z"
+    },
+    "text": "dfgdfg",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:22:56.153Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "89a9b7a0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:22:56+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "Please type a significant word",
+    "inputHint": "acceptingInput",
+    "replyToId": "89a9b7a0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "89b17fd0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:22:56+00:00",
+    "timestamp": "2020-04-29T13:22:56.205Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166584003vw38313woqg",
+      "clientTimestamp": "2020-04-29T13:23:04.003Z"
+    },
+    "text": "dfg dfgd",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:23:04.008Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "8e582480-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:23:04+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "Please type just one word",
+    "inputHint": "acceptingInput",
+    "replyToId": "8e582480-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "8e5a4760-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:23:04+00:00",
+    "timestamp": "2020-04-29T13:23:04.022Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166690795jfouaguqral",
+      "clientTimestamp": "2020-04-29T13:24:50.795Z"
+    },
+    "text": "internet",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:24:50.813Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "ce014ad0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:24:50+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "You choose: internet \n\nPlease Wait.",
+    "inputHint": "acceptingInput",
+    "replyToId": "ce014ad0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "ced2cba0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:24:52+00:00",
+    "timestamp": "2020-04-29T13:24:52.185Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "typing",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "inputHint": "acceptingInput",
+    "replyToId": "ce014ad0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "ced40420-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:24:52+00:00",
+    "timestamp": "2020-04-29T13:24:52.194Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "attachmentLayout": "list",
+    "inputHint": "acceptingInput",
+    "attachments": [
+      {
+        "contentType": "application/vnd.microsoft.card.hero",
+        "content": {
+          "text": "Here is the list of the words.\n\nPlease choose the intruder one!",
+          "buttons": [
+            {
+              "type": "imBack",
+              "title": "online",
+              "value": "online"
+            },
+            {
+              "type": "imBack",
+              "title": "network",
+              "value": "network"
+            },
+            {
+              "type": "imBack",
+              "title": "web",
+              "value": "web"
+            },
+            {
+              "type": "imBack",
+              "title": "wireless",
+              "value": "wireless"
+            },
+            {
+              "type": "imBack",
+              "title": "kropotkin",
+              "value": "kropotkin"
+            },
+            {
+              "type": "imBack",
+              "title": "mail",
+              "value": "mail"
+            }
+          ]
+        }
+      }
+    ],
+    "replyToId": "ce014ad0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "d0641a00-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:24:54+00:00",
+    "timestamp": "2020-04-29T13:24:54.816Z",
+    "locale": "en-US"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1588166699567fqfzb4hu7rk",
+      "clientTimestamp": "2020-04-29T13:24:59.567Z"
+    },
+    "text": "kropotkin",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "timestamp": "2020-04-29T13:24:59.578Z",
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "id": "d33ab9a0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:24:59+00:00",
+    "recipient": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:46303"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "You have responded correctly.\n\nYour score is: 2\n\nThanks for completing the test.",
+    "inputHint": "acceptingInput",
+    "replyToId": "d33ab9a0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "d33bf220-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:24:59+00:00",
+    "timestamp": "2020-04-29T13:24:59.586Z",
+    "locale": "en-US"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:46303",
+    "channelId": "emulator",
+    "from": {
+      "id": "502e8ec0-8a1b-11ea-a930-bbb63a0538d3",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "ed353a20-8a1b-11ea-a930-bbb63a0538d3|livechat"
+    },
+    "recipient": {
+      "id": "a0c213c0-b055-4622-93f6-566a9c1e5130",
+      "role": "user"
+    },
+    "text": "Type anything to run the Intruder Bot again.",
+    "inputHint": "acceptingInput",
+    "replyToId": "d33ab9a0-8a1c-11ea-90ee-5bf8a33fff60",
+    "id": "d33d78c0-8a1c-11ea-90ee-5bf8a33fff60",
+    "localTimestamp": "2020-04-29T13:24:59+00:00",
+    "timestamp": "2020-04-29T13:24:59.595Z",
+    "locale": "en-US"
+  }
+]
