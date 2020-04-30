@@ -169,6 +169,7 @@ print(get_related('december', embedding_in, vocab))
 print(get_related('december', embedding_in, vocab))
 print(get_related('december', embedding_in, vocab))
 
+
 def read_simlex999():
     simlex999 = []
     with open('data/SimLex-999/SimLex-999.txt') as f: #open the test file SimLex-999.txt
@@ -215,8 +216,7 @@ print('simlex999 speareman correlation: {}'.format(rho))
 
 #----------------------------Visualize The word embeddings---------------------------------#
 
-
-# Reading a mixture of text and numbers
+# Reading a mixture of text and vectors
 def read_model(file_path):
     with open(file_path) as f:
         i=0
