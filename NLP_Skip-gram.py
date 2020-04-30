@@ -215,8 +215,7 @@ print('simlex999 speareman correlation: {}'.format(rho))
 
 #----------------------------Visualize The word embeddings---------------------------------#
 
-from sklearn.manifold import TSNE #import TSNE technic from manifold
-import matplotlib.pyplot as plt
+
 # Reading a mixture of text and numbers
 def read_model(file_path):
     with open(file_path) as f:
@@ -230,9 +229,11 @@ def read_model(file_path):
             if i == 1100:
                 break
 
+from sklearn.manifold import TSNE #import TSNE technic from manifold
+import matplotlib.pyplot as plt
 words = []
 vectors = []
-for word, vec in read_model('drive/My Drive/_AI.NLP/vectors/embedfull6-3.txt'):#pour tous les 1100 couples de (word,vec) retourné
+for word, vec in read_model('embed17.txt'):#pour tous les 1100 couples de (word,vec) retourné
     words.append(word)#add each word to  words's array.
     vectors.append(vec)#parallèlement, ajouter chaque vecteur dans la liste vectors
 
@@ -247,10 +248,9 @@ for word, xy in zip(words, coordinates): #parallele aggregation of elements from
                   xy=(xy[0], xy[1]),
                   xytext=(2, 2),
                   textcoords='offset points')
-    
 
-plt.xlim(-5, 5)
-plt.ylim(-5, 5)
+plt.xlim(-70, 70)
+plt.ylim(-70, 70)
 plt.show()
 
 #----------------------------Export the model---------------------------------#
